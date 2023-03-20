@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" placeholder="feet" id="input_feet" oninput="convert_feet()"> (feet) = <span id="meter_result"></span> <br>
+<input type="text" placeholder="meter" id="input_meter" oninput="convert_meter()">(meter) = <span id="feet_result"></span>
+</body>
+</html>
+<script>
+    function feet_to_meter (feet) {
+        return 0.305 * feet;
+    }
+    function convert_feet() {
+        let input_feet = document.getElementById('input_feet').value;
+        let result_1 = feet_to_meter (input_feet);
+        document.getElementById('meter_result').innerHTML = `${result_1} meter`;
+    }
+    function meter_to_feet (meter) {
+        return 3.279 * meter;
+    }
+    function convert_meter() {
+        let input_meter = document.getElementById('input_meter').value;
+        let result_2 = meter_to_feet (input_meter);
+        document.getElementById('feet_result').innerHTML = `${result_2} feet`;
+    }
+</script>
